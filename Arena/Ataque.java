@@ -1,3 +1,4 @@
+
 public abstract class Ataque {
     private int dano;
     private Tipo arma;

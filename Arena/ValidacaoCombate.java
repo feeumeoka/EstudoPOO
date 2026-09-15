@@ -1,4 +1,3 @@
-
 public class ValidacaoCombate {
     private static Arena.Rodada acao2;
     private static Arena.Rodada acao1;
