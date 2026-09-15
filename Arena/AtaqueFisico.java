@@ -10,8 +10,8 @@ public class AtaqueFisico extends Ataque {
     }
 
     @Override 
-    public void dano(Personagem p, Ataque arma){
-        calculo.danoTotal(p, arma.getDano());
+    public int dano(Personagem p, Ataque arma){
+        return calculo.danoTotal(p, arma.getDano());
     }
 
     public static Ataque getSoco() {

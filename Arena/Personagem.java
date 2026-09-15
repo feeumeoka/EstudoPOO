@@ -47,7 +47,7 @@ public class Personagem {
 
 
     public void atacar(Personagem p){
-        p.receberDano(escolherAtaque().getDano());
+        p.receberDano(escolherAtaque().dano(p, ataqueAtual));
     }
 
 
@@ -69,7 +69,11 @@ public class Personagem {
     }
 
     public void defender(Ataque ataque){
-        status.defender(ataque.getDano());
+        if (ataques[2] != null ) {
+            status.defender(ataque.dano(this, ataque));
+        } else {
+            return;
+        }
     }
     public boolean esquivar(){
         return status.esquiva();

@@ -60,9 +60,6 @@ public class Arena{
                 default:
             }
         }
-        else {
-            System.out.println("Ambos defenderam...");
-        }
     }
 
     public void resumo(Personagem p1, Personagem p2){

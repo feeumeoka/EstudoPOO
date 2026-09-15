@@ -16,7 +16,7 @@ public class ValidacaoCombate {
     }
 
     public boolean defesaP2(){
-        return (acao2 == Arena.Rodada.DEFENDEU && acao2 == Arena.Rodada.CONTRA_ATACOU);
+        return (acao2 == Arena.Rodada.DEFENDEU || acao2 == Arena.Rodada.CONTRA_ATACOU);
     }
 
     public boolean others(){

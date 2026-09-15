@@ -1,7 +1,7 @@
 
 public abstract class Ataque {
-    private int dano;
-    private Tipo arma;
+    private final int dano;
+    private final Tipo arma;
     
     public static enum Tipo {
         SOCO,
@@ -23,6 +23,6 @@ public abstract class Ataque {
         return arma;
     }
 
-    public abstract void dano(Personagem p, Ataque arma);
+    public abstract int dano(Personagem p, Ataque arma);
 
 }

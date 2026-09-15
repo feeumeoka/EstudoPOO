@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Status {
     private int vida;
-    private Random rand;
+    private final Random rand;
     private double critico;
     private double esquiva;
 
@@ -24,13 +24,6 @@ public class Status {
     }
 
     public void receberDano(int dano){
-        int chance = rand.nextInt(100);
-        if(chance < critico) {
-            System.out.println("Acerto crítico!");
-            vida -= dano * 2;
-            return;
-        }
-        
         vida -= dano;
         if(vida < 0) vida = 0;
     }
@@ -39,11 +32,6 @@ public class Status {
         int chance = rand.nextInt(100);
         return chance <= esquiva;
     }
-
-    public void contraAtaque(int dano){
-        vida -= dano/2;
-    }
-
     
     public void defender(int dano){
 
