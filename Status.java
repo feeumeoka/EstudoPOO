@@ -2,14 +2,12 @@ import java.util.Random;
 
 public class Status {
     private int vida;
-    private int dano;
     private Random rand;
     private double critico;
     private double esquiva;
 
     public Status() {
         this.vida = 100;
-        this.dano = 10;
         this.critico = 5.0;
         this.esquiva = 15.0;
         this.rand = new Random();
@@ -24,10 +22,6 @@ public class Status {
     public int getVida(){
         return vida;
     }
-    
-    public int getDano(){
-        return dano;
-    }
 
     public void receberDano(int dano){
         int chance = rand.nextInt(100);
@@ -36,7 +30,9 @@ public class Status {
             vida -= dano * 2;
             return;
         }
+        
         vida -= dano;
+        if(vida < 0) vida = 0;
     }
 
     public boolean esquiva(){
@@ -44,19 +40,13 @@ public class Status {
         return chance <= esquiva;
     }
 
-    public void contraAtaque(){
+    public void contraAtaque(int dano){
         vida -= dano/2;
     }
 
     
-    public boolean defender(){
+    public void defender(int dano){
 
         vida -= (dano/2);
-        return false;
     }
-
-    
-
-    
-
 }
